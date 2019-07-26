@@ -1,0 +1,641 @@
+$ffh: "Raleway", sans-serif;
+$ffp: "Roboto", sans-serif;
+
+$zlat: #86754d;
+$hover: #870000;
+
+body {
+  padding: 0;
+  margin: 0;
+  background: #fff;
+}
+a {
+  text-decoration: none;
+  transition: 0.3s all ease-in-out;
+}
+:hover {
+  transition: 0.3s all ease-in-out;
+}
+
+ul {
+  list-style: none;
+}
+.wrapper {
+  width: 1376px;
+  margin: 0 auto;
+}
+header {
+  background: $zlat;
+  width: 100%;
+  z-index: 100;
+  position: relative;
+  .uphead {
+    height: 26px;
+    padding: 0;
+    line-height: 26px;
+    h1 {
+      font-family: $ffp;
+      text-align: center;
+      color: white;
+      font-size: 15px;
+      font-weight: 300;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .langselect {
+    position: absolute;
+    top: 0;
+    right: 0;
+    list-style: none;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: $ffp;
+    li {
+      width: 80px;
+      float: left;
+      margin: 0;
+      padding: 0;
+      a {
+        margin: 0;
+        padding: 0;
+        display: block;
+        color: #fff;
+      }
+    }
+    li:hover {
+      background: #fff;
+      border-bottom: 1px solid $zlat;
+      a {
+        color: $zlat;
+      }
+    }
+  }
+
+  nav {
+    background: #fff;
+    position: relative;
+    height: 80px;
+    line-height: 80px;
+    img#trougao {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: 0.3s all ease;
+    }
+
+    .logohover {
+      display: block;
+      text-decoration: none;
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(0deg);
+      width: 124px;
+      height: 124px;
+      transition: 0.2s all ease-in-out;
+    }
+    img.logonav {
+      width: 100%;
+      height: 100%;
+    }
+    .logohover:hover > img.logonav {
+      opacity: 0.7;
+      transition: 0.2s all ease-in-out;
+    }
+    ul.leftmenu,
+    ul.rightmenu {
+      list-style: none;
+      float: left;
+      width: 545px;
+      display: flex;
+      justify-content: space-between;
+      margin: 0;
+      padding: 0;
+      z-index: 100;
+      position: relative;
+      > li {
+        margin: 0;
+        width: 25%;
+        box-sizing: border-box;
+        text-align: center;
+        transition: 0.3s all ease-in-out;
+        position: relative;
+        h2 {
+          margin: 0;
+          padding: 0;
+          font-weight: 300;
+          font-family: $ffh;
+          font-size: 18px;
+          a {
+            text-decoration: none;
+            color: $zlat;
+            height: 80px;
+            display: block;
+            margin: 0;
+            padding: 0;
+            transition: 0.3s all ease-in-out;
+          }
+        }
+      }
+      > li::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-left: 1px dotted $hover;
+        height: 0;
+        width: 1px;
+        transition: 0.5s all ease-in-out;
+      }
+      > li:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-right: 1px dotted $hover;
+        height: 0;
+        width: 1px;
+        transition: 0.5s all ease-in-out;
+      }
+      > li:hover,
+      > li:hover {
+        > a {
+          color: $hover;
+        }
+        > h2 > a {
+          color: $hover;
+        }
+      }
+      > li:hover::before,
+      > li:hover::after,
+      > li:hover::before,
+      > li:hover::after {
+        height: 100%;
+        transition: 0.5s all ease-in-out;
+      }
+    }
+    ul.rightmenu {
+      float: right;
+    }
+    ul.phnnloc {
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      li {
+        float: left;
+        margin: 0;
+        padding: 0;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        box-sizing: border-box;
+        transition: 0.3s all ease-in-out;
+        a {
+          display: block;
+        }
+      }
+      li:nth-child(1) {
+        border-left: 1px dotted $zlat;
+        border-right: 1px dotted $zlat;
+        position: relative;
+        .phnappear {
+          display: none;
+          position: absolute;
+          top: 80px;
+          right: 0;
+          padding: 4px 0 0 0;
+          a {
+            position: relative;
+            font-family: $ffp;
+            width: 400px;
+            height: 50px;
+            line-height: 50px;
+            text-align: right;
+            padding-right: 40px;
+            display: block;
+            text-decoration: none;
+            color: $zlat;
+            background: #fff;
+            span {
+              position: absolute;
+              top: 0;
+              right: 0;
+              width: 30px;
+              height: 50px;
+              background: $zlat;
+            }
+          }
+          a:hover {
+            color: $hover;
+            span {
+              background: $hover;
+            }
+          }
+        }
+      }
+      li:nth-child(1):hover {
+        .phnappear {
+          display: block;
+        }
+      }
+    }
+  }
+}
+.phnnloc li:nth-child(1):hover {
+  border-right: 1px #fff solid;
+  border-left: 1px #fff solid;
+}
+.lmoh {
+  position: relative;
+  top: 0;
+  right: 0;
+  z-index: 10000000;
+}
+.phnbutt:hover,
+#locmodopener:hover {
+  background: $hover;
+  > img {
+    filter: grayscale(100) brightness(100);
+  }
+}
+#locsibl {
+  position: fixed;
+  top: 26px;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  background: $hover;
+  transition: none;
+  img {
+    filter: grayscale(100) brightness(100);
+  }
+}
+#locsibl:hover {
+  filter: brightness(1.25) !important;
+  transition: 0.3s all ease-in-out;
+}
+.loccontainer {
+  position: relative;
+}
+#locmod {
+  width: 90%;
+  max-width: 90%;
+  height: auto;
+  margin: 0 5% 80px;
+  padding: 0;
+  top: 60px;
+  overflow: hidden;
+  .locmodhead {
+    height: 80px;
+    line-height: 80px;
+    background: #fff;
+    h4 {
+      color: $zlat;
+      padding-left: 50px;
+      font-family: $ffh;
+      font-size: 34px;
+      font-weight: 300;
+      margin: 0;
+    }
+  }
+}
+.blocker {
+  padding: 20px 0;
+  z-index: 10000;
+  background: rgba(86, 86, 86, 0.82);
+}
+.modal a.close-modal {
+  top: 25px;
+  right: 50px;
+  background-image: url(../images/restoran-nacionalna-klasa-modal-close-btn.svg);
+}
+.modal a.close-modal:hover {
+  filter: brightness(1.5);
+}
+.mapouter {
+  width: 100% !important;
+  height: 650px;
+
+  .gmap_canvas {
+    width: 100%;
+    height: 650px;
+    #gmap_canvas {
+      width: 100%;
+      height: 650px;
+    }
+  }
+}
+.locmodfoot {
+  height: 80px;
+  background: #fff;
+}
+.droppar {
+  position: relative;
+}
+.dropmenu {
+  display: none;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  padding: 4px 0 0;
+  width: 400px;
+  margin: 0;
+  ul.dropul {
+    list-style: none;
+    background: #fff;
+    width: 400px;
+    padding: 6px 0;
+    margin: 0;
+    position: relative;
+    .hospan {
+      background: $zlat;
+      height: 100%;
+      width: 30px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      height: 50px;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      position: relative;
+      text-align: left;
+      .hospanin {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $hover;
+        height: 40px;
+        margin: 5px 0;
+        width: 30px;
+        opacity: 0;
+      }
+      h3 {
+        margin: 0;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        font-weight: 300;
+        font-family: $ffh;
+        a {
+          display: block;
+          text-decoration: none;
+          color: $zlat;
+          padding: 0 0 0 40px;
+        }
+      }
+    }
+  }
+}
+.droppar .dropmenu li:hover {
+  .hospanin {
+    opacity: 1;
+  }
+  h3 {
+    a {
+      color: $hover;
+    }
+  }
+}
+.droppar:hover > .dropmenu {
+  display: block;
+}
+
+//Slider
+#lightSlider {
+  width: 100%;
+  li {
+    width: 100%;
+    position: relative;
+    img {
+      width: 100%;
+    }
+    .shadoverlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 60%;
+      background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+    }
+    .slidetext {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: #fff;
+      p.ppichead {
+        font-family: $ffh;
+        font-size: 24px;
+        padding: 0;
+        margin: 10px 0;
+      }
+      p {
+        font-family: $ffp;
+        font-weight: 300;
+        font-size: 21px;
+        margin: 5px 0;
+      }
+    }
+  }
+}
+.lSSlideWrapper {
+  position: relative;
+}
+.lSPager {
+  position: absolute;
+  bottom: 130px;
+  left: 50%;
+  transform: translateX(-50%) !important ;
+}
+.lSSlideOuter .lSPager.lSpg > li a {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.23);
+  margin: 15px;
+}
+.lSSlideOuter .lSPager.lSpg > li:hover a {
+  background-color: $zlat;
+}
+.lSSlideOuter .lSPager.lSpg > li.active a {
+  background-color: $hover;
+}
+//First text
+#firsttext {
+  padding: 140px 0;
+  .wrapper {
+    display: flex;
+    .ftcol {
+      width: 50%;
+      float: left;
+      box-sizing: border-box;
+      h4 {
+        font-family: $ffh;
+        font-weight: 300;
+        color: $zlat;
+        font-size: 54px;
+        margin: 0;
+        padding: 0;
+      }
+      .ftunderhead {
+        border-top: 1px solid #ddd7cb;
+        border-bottom: 1px solid #ddd7cb;
+        width: 475px;
+        margin: 80px 0;
+        color: #101010;
+        font-family: $ffh;
+        font-weight: 300;
+        font-size: 40px;
+        padding: 25px 0;
+      }
+      h5 {
+        color: #606060;
+        font-weight: 300;
+        padding: 0;
+        margin: 7px 0;
+        font-size: 36px;
+      }
+      p {
+        color: $zlat;
+        font-family: $ffp;
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 300;
+        text-align: justify;
+      }
+      .ftbutton {
+        text-align: center;
+        text-decoration: none;
+        width: 280px;
+        height: 65px;
+        line-height: 65px;
+        float: right;
+        color: #101010;
+        font-family: $ffh;
+        font-size: 20px;
+        margin-top: 30px;
+        position: relative;
+        transition: 0.3s all ease-in-out;
+        //top
+        span:nth-child(1) {
+          position: absolute;
+          top: 0;
+          right: 0;
+          display: block;
+          width: 80%;
+          background: #303030;
+          height: 2px;
+          transition: 0.3s all ease-in-out;
+        }
+        //right
+        span:nth-child(2) {
+          position: absolute;
+          top: 0;
+          right: 0;
+          display: block;
+          width: 2px;
+          background: #303030;
+          height: 100%;
+          transition: 0.3s all ease-in-out;
+        }
+        //bottom
+        span:nth-child(3) {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          display: block;
+          width: 100%;
+          background: #303030;
+          height: 2px;
+          transition: 0.3s all ease-in-out;
+        }
+        //left
+        span:nth-child(4) {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          display: block;
+          width: 2px;
+          background: #303030;
+          height: 50%;
+          transition: 0.3s all ease-in-out;
+        }
+      }
+      .ftbutton:hover {
+        //top
+        span:nth-child(1) {
+          width: 100%;
+          transition: 0.3s all ease-in-out;
+        }
+        //right
+        span:nth-child(2) {
+          height: 50%;
+          transition: 0.3s all ease-in-out;
+        }
+        //bottom
+        span:nth-child(3) {
+          width: 80%;
+          transition: 0.3s all ease-in-out;
+        }
+        //left
+        span:nth-child(4) {
+          height: 100%;
+          transition: 0.3s all ease-in-out;
+        }
+      }
+    }
+  }
+}
+.sticky {
+  position: fixed !important;
+  top: 0 !important;
+  width: 100%;
+  z-index: 100000;
+}
+.stickystay {
+  margin-bottom: 80px;
+}
+.sticky + .content {
+  padding-top: 80px;
+}
+.addshadowtohead {
+  filter: drop-shadow(0 5px 5px rgba(70, 70, 70, 0.6));
+}
+.gm-style-iw {
+  width: auto;
+  height: auto;
+  text-align: center;
+  font-family: $ffh !important;
+  font-size: 2em !important;
+  button.gm-ui-hover-effect:nth-child(2) {
+    right: 20px !important;
+    top: 10px !important;
+    width: 28px !important;
+    height: 28px !important;
+    background: $hover !important;
+    border-radius: 50% !important;
+    background: url(../images/restoran-nacionalna-klasa-modal-close-btn.svg)
+      no-repeat !important;
+  }
+}
+button.gm-ui-hover-effect:nth-child(2) > img:nth-child(1) {
+  display: none !important;
+}
+body {
+  overflow-y: auto !important;
+}
